@@ -25,9 +25,9 @@ export default function FormRsa() {
     const Encrypt = (data: Data) => {
         // Função para criptografar o texto usando a chave pública
         const encryptTextWithPublicKey = (text: any, publicKey: any) => {
-            const encrypted = publicKey.encrypt(text, 'utf-8');
-            console.log(encrypted)
-            return encrypted;
+            const rsa_pub = forge.pki.publicKeyFromPem(publicKey)
+            const encrypted = rsa_pub.encrypt(forge.util.encodeUtf8(text), 'RSA-OAEP');
+            return forge.util.encode64(encrypted);
         };
         const encryptedText = encryptTextWithPublicKey(data.message, data.key);
         return encryptedText
@@ -37,8 +37,10 @@ export default function FormRsa() {
 
         // Função para descriptografar o texto usando a chave privada
         const decryptTextWithPrivateKey = (encryptedText: any, privateKey: any) => {
-            const decrypted = privateKey.decrypt(forge.util.decode64(encryptedText), 'RSA-OAEP');
-            return decrypted;
+            const rsa_priv = forge.pki.privateKeyFromPem(privateKey)
+            const decrypted = rsa_priv.decrypt(forge.util.decode64(encryptedText), 'RSA-OAEP');
+            console.log(decrypted)
+            return forge.util.decodeUtf8(decrypted)
         };
 
         const encryptedText = decryptTextWithPrivateKey(data.message, data.key);
@@ -46,6 +48,7 @@ export default function FormRsa() {
     }
 
     const handleChangeMode = (mode: string) => {
+        setMessage('')
         return Active(mode)
     }
 

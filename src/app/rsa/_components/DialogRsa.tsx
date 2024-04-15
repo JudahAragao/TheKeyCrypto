@@ -59,12 +59,12 @@ export default function DialogRsa() {
             {keys && (
                 <div className="flex flex-col gap-4">
                     <Button
-                        onClick={() => downloadKey(keys.privateKey, 'private.key')}
+                        onClick={() => downloadKey(keys.privateKey, 'private_key.pem')}
                     >
                         Download Private Key
                     </Button>
                     <Button
-                        onClick={() => downloadKey(keys.publicKey, 'public_key.pub')}
+                        onClick={() => downloadKey(keys.publicKey, 'public_key.pem')}
                     >
                         Download Public Key
                     </Button>

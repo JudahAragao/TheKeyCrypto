@@ -7,8 +7,6 @@ import logoDark from '@/assets/img/to-dark-theme-logo.png'
 import logoLight from '@/assets/img/to-light-theme-logo.png'
 import ActiveLink from "./ActiveLink";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export default function NavMenu() {
 
