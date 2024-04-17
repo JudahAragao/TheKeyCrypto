@@ -53,7 +53,7 @@ export default function DialogRsa() {
         <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
                 <DialogTitle>Generate RSA Key Pair</DialogTitle>
-                <DialogDescription>Click on 'generate pairs' and download!</DialogDescription>
+                <DialogDescription>Click on &quot;generate pairs&quot; and download!</DialogDescription>
             </DialogHeader>
             {keys && (
                 <div className="flex flex-col gap-4">
