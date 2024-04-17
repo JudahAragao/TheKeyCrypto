@@ -10,8 +10,6 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import forge from 'node-forge';
 
@@ -55,6 +53,7 @@ export default function DialogRsa() {
         <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
                 <DialogTitle>Generate RSA Key Pair</DialogTitle>
+                <DialogDescription>Click on 'generate pairs' and download!</DialogDescription>
             </DialogHeader>
             {keys && (
                 <div className="flex flex-col gap-4">
@@ -71,7 +70,7 @@ export default function DialogRsa() {
                 </div>
             )}
             <DialogFooter>
-                <Button onClick={(e) => generateRSAKeyPair(e)}>Save changes</Button>
+                <Button onClick={(e) => generateRSAKeyPair(e)}>Generate pairs</Button>
             </DialogFooter>
         </DialogContent>
     </Dialog>
