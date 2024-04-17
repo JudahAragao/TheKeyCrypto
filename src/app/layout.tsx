@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavMenu from "./_components/NavMenu";
 import { ThemeProvider } from "@/components/theme-provider"
+import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +34,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      <GoogleTagManager gtmId={`${process.env.NEXT_GOOGLE_ANALYTICS}`} />
     </html>
   );
 }
