@@ -9,7 +9,7 @@ export default function Home() {
     <div className="max-w-[1490px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">RSA-OAEP (Optimal Asymmetric Encryption Padding)</h2>
       <p className="text-base md:text-lg lg:text-xl mb-4">
-        RSA-OAEP is a widely used public key cryptography scheme to protect data confidentiality during transmission. Here's a detailed explanation of how it works:
+        RSA-OAEP is a widely used public key cryptography scheme to protect data confidentiality during transmission. Here&apos;s a detailed explanation of how it works:
       </p>
       <ul>
         <li className="mb-6">
